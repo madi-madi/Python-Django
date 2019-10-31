@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+<a href="{% url 'blog:create_post' %}"> Add New Post</a>
+{% for post in all_posts %}
+<l>
+    <a href="{% url 'blog:post' post.id %}">{{ post.title }}</a>
+    <br>
+
+
+</l>
+<br>
+{% endfor %}
+</body>
+</html>
