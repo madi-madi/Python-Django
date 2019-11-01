@@ -8,6 +8,12 @@
 {{post.title}}
 <br>
     <a href="{% url 'blog:edit_post' post.id %}"> Edit Post</a>
-<img src="{%  post.img.url %}" alt="Image">
+
+<br>
+{% if post.img %}
+
+<img src="{{  post.img }}" alt="Image">
+
+{% endif %}
 </body>
 </html>

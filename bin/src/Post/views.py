@@ -6,7 +6,8 @@ from .forms import PostForm
 
 
 def getAll(request):
-    all_posts = Post.objects.all()
+    # all_posts = Post.objects.all()
+    all_posts = Post.objects.filter(active=True)
     context = {'all_posts': all_posts}
     return render(request, 'all_posts.html', context)
 
@@ -16,8 +17,8 @@ def getById(request, id):
     post = get_object_or_404(Post, id=id)
 
     context = {'post': post}
-    return render(request, 'info.html', context)
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'info.html', context);
+    # return HttpResponse("Hello, world. You're at the polls index.")
 
 
 def create_post(request):
