@@ -1,19 +1,72 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Posts</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<a href="{% url 'blog:create_post' %}"> Add New Post</a>-->
+<!--{% for post in all_posts %}-->
+<!--<l>-->
+<!--    <a href="{% url 'blog:post' post.id %}">{{ post.title }}</a>-->
+<!--    <br>-->
+
+
+<!--</l>-->
+<!--<br>-->
+<!--{% endfor %}-->
+<!--</body>-->
+<!--</html>-->
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Posts</title>
-</head>
-<body>
-<a href="{% url 'blog:create_post' %}"> Add New Post</a>
-{% for post in all_posts %}
-<l>
-    <a href="{% url 'blog:post' post.id %}">{{ post.title }}</a>
-    <br>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     {% load static %}
+      <link rel="stylesheet" href="{% static 'home-static/css/style.css' %}">
+    <title>Python Django!</title>
+  </head>
+  <body>
+        <!--  start nav -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Python Django</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-</l>
-<br>
-{% endfor %}
-</body>
+        </nav>
+        <!-- end nav -->
+        <!-- start content -->
+        <div class="container">
+            <div class="row mt-4">
+                {% for post in all_posts %}
+
+                <div class="col-md-4 mt-4">
+                    <div class="card" style="width: 18rem;">
+                    {% if post.img %}
+                      <img class="card-img-top img-thumbnail py-image"
+                           src="{{post.img.url}}"
+                           alt="Card image cap">
+                        {% endif %}
+                      <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{post.content}}</p>
+                        <a href="{% url 'blog:post' post.id %}" class="btn btn-primary">Know More</a>
+                      </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- end content -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>
