@@ -6,7 +6,7 @@
       <change beforePath="$PROJECT_DIR$/Post/templates/all_posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/all_posts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Post/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
